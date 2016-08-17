@@ -11,3 +11,7 @@ This work is part of
 ## Installation
 
 	Pkg.clone("https://github.com/defeo/RootFindGF.jl.git")
+
+## Examples
+
+You can find up to date examples in this [jupyter notebook](demo.ipynb).
