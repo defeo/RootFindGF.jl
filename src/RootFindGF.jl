@@ -3,6 +3,7 @@ using Nemo
 
 export Γ, SRA, flint_root_find
 
+include("macros.jl")
 include("tree.jl")
 include("c_libs.jl")
 
@@ -88,7 +89,7 @@ function _SRA{T<:Nemo.FinFieldElem}(f::PolyElem{T}, Γ::AbstractArray{T,2}, stop
 
     valroots = Array{T}(d)
     for i in m:-1:1
-        roots = multi_roots!(valroots, fs[i], roots, squeeze(Γ[i,:], 1), i, Γ[i,i])
+        roots = multi_roots!(valroots, fs[i], roots, @row(Γ, i), i, Γ[i,i])
     end
 
     return valroots
